@@ -1422,3 +1422,54 @@ button:focus-visible {
     transform: none;
   }
 }
+
+/* Student Result Management System screenshot */
+.srms-image-preview {
+  position: relative;
+  display: block;
+  height: 265px;
+  min-height: 265px;
+  overflow: hidden;
+  padding: 0;
+  background: #e9edf4;
+}
+
+.srms-screenshot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 350ms ease;
+}
+
+.srms-image-preview:hover .srms-screenshot {
+  transform: scale(1.035);
+}
+
+.srms-image-preview .preview-open {
+  transition: background 220ms ease, color 220ms ease;
+}
+
+.srms-image-preview:hover .preview-open {
+  background: #356ae6;
+  color: #ffffff;
+}
+
+@media (max-width: 575.98px) {
+  .srms-image-preview {
+    height: 220px;
+    min-height: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .srms-screenshot {
+    transition: none;
+  }
+
+  .srms-image-preview:hover .srms-screenshot {
+    transform: none;
+  }
+}
+
