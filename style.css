@@ -1350,3 +1350,75 @@ button:focus-visible {
     transform: none;
   }
 }
+
+/* Actual Zora website screenshot */
+.zora-preview {
+  position: relative;
+  display: block;
+  height: 265px;
+  min-height: 265px;
+  overflow: hidden;
+  padding: 0;
+  background: #e9edf4;
+}
+
+.zora-screenshot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 350ms ease;
+}
+
+.zora-preview:hover .zora-screenshot {
+  transform: scale(1.035);
+}
+
+.zora-overlay {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  background: rgba(16, 24, 32, 0.92);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.zora-preview:hover .zora-overlay,
+.zora-preview:focus-visible .zora-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 575.98px) {
+  .zora-preview {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .zora-overlay {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zora-screenshot,
+  .zora-overlay {
+    transition: none;
+  }
+
+  .zora-preview:hover .zora-screenshot {
+    transform: none;
+  }
+}
